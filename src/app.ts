@@ -1,6 +1,8 @@
 import * as bodyParser from "body-parser";
 import express, {Express} from "express";
 import {UsersModule} from "./modules/users/init";
+import {LikesModule} from "./modules/likes/init";
+import {MatchesModule} from "./modules/matches/init";
 
 class App {
 
@@ -19,7 +21,9 @@ class App {
     }
 
     private initModules() {
-        const _ = new UsersModule(this.app);
+        const uM = new UsersModule(this.app);
+        const lM = new LikesModule(this.app);
+        const mM = new MatchesModule(this.app);
     }
 }
 
