@@ -1,0 +1,27 @@
+version: '3'
+services:
+  api:
+    build: .
+    ports:
+      - "3000:3000"
+    links:
+      - db
+    environment:
+      PGHOST: "db"
+      PGDATABASE: "postgres"
+      PGUSER: "postgres"
+      PGPASSWORD: "postgres"
+    depends_on: 
+        - db
+  db:
+    image: "postgres:latest"
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: 'postgres'
+    volumes:
+      - database_data:/var/lib/postgresql/data
+volumes:
+  database_data:
+    driver: local
