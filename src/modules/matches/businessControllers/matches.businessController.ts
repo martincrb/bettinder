@@ -7,11 +7,11 @@ export class MatchesBusinessController {
         this.matchesRepo = matchesRepo;
     }
 
-    addMatch(userOne: string, userTwo: string) {
+    public addMatch(userOne: string, userTwo: string) {
         this.matchesRepo.addMatch(userOne, userTwo);
     }
 
-    getMatchesByUser(user: string) {
+    public getMatchesByUser(user: string) {
         return this.matchesRepo.getMatchesByUser(user);
     }
 }

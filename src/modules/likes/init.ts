@@ -1,6 +1,6 @@
 import {Express} from "express";
-import {Routes} from "./routes";
 import {LikesRouteController} from "./routeControllers/likes.routeController";
+import {Routes} from "./routes";
 
 export class LikesModule {
     public routes: Routes;

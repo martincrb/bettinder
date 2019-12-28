@@ -11,6 +11,6 @@ export class Routes {
     }
 
     private configureRoutes(app: Express) {
-        app.route("/likes");
+        app.route("/likes").post(this.routeController.addLike);
     }
 }

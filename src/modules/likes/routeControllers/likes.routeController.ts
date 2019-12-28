@@ -8,9 +8,10 @@ export class LikesRouteController {
         this.likesBusiness = likesBusiness;
     }
 
-    addLike(req: Request, res: Response) {
-        let fromUser = req.body.from;
-        let toUser = req.body.to;
+    public addLike = async (req: Request, res: Response) => {
+        const fromUser = req.body.from;
+        const toUser = req.body.to;
         this.likesBusiness.addLike(fromUser, toUser);
+        res.status(200).send({});
     }
 }

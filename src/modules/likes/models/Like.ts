@@ -1,10 +1,11 @@
 export class Like {
 
+    public fromuser: string;
+    public touser: string;
+
     constructor(likeBy: string, likeTo: string) {
-        this.likeBy = likeBy;
-        this.likeTo = likeTo;
+        this.fromuser = likeBy;
+        this.touser = likeTo;
     }
 
-    likeBy: string;
-    likeTo: string;
 }

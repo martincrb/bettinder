@@ -11,6 +11,7 @@ export class Routes {
     }
 
     private configureRoutes(app: Express) {
-        app.route("/matches");
+        app.route("/matches")
+            .get(this.routeController.getMatchesFromUser);
     }
 }

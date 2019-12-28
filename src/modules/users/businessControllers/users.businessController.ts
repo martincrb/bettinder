@@ -7,11 +7,16 @@ export class UsersBusinessController {
     constructor(userRepository: UsersRepository = new UsersRepository()) {
         this.userRepository = userRepository;
     }
-    public createNewUser(user: User): Promise<User> {
-        return this.userRepository.addNewUserToDb(user);
+    public async createNewUser(user: User): Promise<User> {
+        this.userRepository.addNewUserToDb(user);
+        return user;
     }
 
-    public getUserById(userid: string): Promise<User> {
+    public async getUserById(userid: string): Promise<User> {
         return this.userRepository.getUserById(userid);
+    }
+
+    public async getUserProposals(userid: string): Promise<User[]> {
+        return this.userRepository.getUserProposals(userid);
     }
 }

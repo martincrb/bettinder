@@ -1,6 +1,6 @@
 import {Express} from "express";
-import {Routes} from "./routes";
 import {MatchesRouteController} from "./routeControllers/matches.routeController";
+import {Routes} from "./routes";
 
 export class MatchesModule {
     public routes: Routes;

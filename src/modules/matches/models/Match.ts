@@ -1,4 +1,7 @@
 export class Match {
+    public matchDate: Date;
+    public partnerOne: string;
+    public partnerTwo: string;
 
     constructor(partnerOne: string, partnerTwo: string) {
         this.partnerOne = partnerOne;
@@ -6,7 +9,4 @@ export class Match {
         this.matchDate = new Date();
     }
 
-    matchDate: Date;
-    partnerOne: string;
-    partnerTwo: string;
 }

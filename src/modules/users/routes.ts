@@ -13,7 +13,7 @@ export class Routes {
     private configureRoutes(app: Express) {
         app.route("/users")
             .post(this.routeController.addUser);
-        app.route("/users/:userid")
-            .get(this.routeController.getUser);
+        app.route("/users/:userid/proposals")
+            .get(this.routeController.getUserProposals);
     }
 }
