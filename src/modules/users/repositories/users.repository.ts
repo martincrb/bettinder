@@ -19,10 +19,10 @@ export class UsersRepository {
         return queryRes.rows[0];
     }
 
-    public async getUserProposals(userId: string): Promise<User> {
+    public async getUserProposals(userId: string): Promise<User[]> {
         // return this.userDatabase[userId];
         await this.client.connect();
         const queryRes = await App.retrieveDbClient().query<User>("SELECT * FROM users WHERE userid != $1", [userId]);
-        return queryRes.rows[0];
+        return queryRes.rows;
     }
 }

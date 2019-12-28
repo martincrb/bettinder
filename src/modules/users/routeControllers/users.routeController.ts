@@ -22,10 +22,10 @@ export class UsersRouteController {
     }
 
     public getUserProposals = async (req: Request, res: Response) => {
-        const userid = req.body.userid;
+        const userid = req.params.userid;
         if (!userid) { return res.status(400).send({message: "userid is mandatory"}); }
         try {
-            const user = await this.userBusinessController.getUserProposals(userId);
+            const user = await this.userBusinessController.getUserProposals(userid);
             return res.status(200).send(user);
         } catch (error) {
             return res.status(400).send({message: error});
